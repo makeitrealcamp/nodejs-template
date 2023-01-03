@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node ./dist/index.js",
-    "dev": "ts-node-dev --respawn ./index.ts",
+    "dev": "ts-node-dev --respawn ./src/index.ts",
     "lint": "eslint --ext .ts,.tsx ./",
     "lint:fix": "eslint --ext .ts,.tsx ./ --fix",
     "test": "NODE_ENV=test jest --testTimeout=10000",

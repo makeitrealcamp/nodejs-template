@@ -8,6 +8,7 @@ async function connectDB() {
   const env = process.env.NODE_ENV;
 
   try {
+    mongoose.set('strictQuery', false);
     await mongoose.connect(dbUri);
 
     if (env !== 'production') {

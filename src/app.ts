@@ -1,12 +1,11 @@
 import express from 'express';
 import { createServer } from 'http';
 
-import expressConfig from './src/config/express';
-import connectDB from './src/config/database';
-import swaggerDocs from './src/config/swagger';
+import expressConfig from './config/express';
+import connectDB from './config/database';
+import swaggerDocs from './config/swagger';
 import routes from './routes';
-import { connectSocket } from './src/config/socket';
-import errorHandler from './middleware/errorHandler';
+import { connectSocket } from './config/socket';
 
 // setup server
 const app = express();
@@ -27,7 +26,5 @@ connectSocket(server);
 routes(app);
 // Swagger
 swaggerDocs(app, port as number);
-// error handling
-app.use(errorHandler);
 
 export default app;

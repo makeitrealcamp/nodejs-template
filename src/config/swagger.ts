@@ -72,7 +72,7 @@ function swaggerDocs(app: Application, port: number) {
 
   const url = `${process.env.BASE_URL}/docs` || `http://localhost:${port}/docs`;
 
-  log.info(`📃🛠 Docs available at ${url}`);
+  log.info(`Docs 📃🛠  available at ${url}`);
 }
 
 export default swaggerDocs;
