@@ -71,9 +71,9 @@
     "url": "git+https://github.com/makeitrealcamp/nodejs-template.git"
   },
   "keywords": [
-    "core",
+    "template",
     "typescript",
-    "platform",
+    "backend",
     "make-it-real"
   ],
   "author": "makeitreal",

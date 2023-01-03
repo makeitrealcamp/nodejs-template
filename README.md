@@ -1,6 +1,6 @@
 # Node.js Template - Make It Real 💻
 
-Main base of the services used within the Make It Real platforms
+Codebase for the node.js projects.
 
 - Built with Node.js and Express
 - Typescript
@@ -11,7 +11,7 @@ Main base of the services used within the Make It Real platforms
 
 - [Git](https://git-scm.com/downloads)
 - [Volta.sh](https://dev.to/khriztianmoreno/introduccion-a-volta-la-forma-mas-rapida-de-administrar-entornos-de-node-1oo6)
--  [Node.js and npm](https://nodejs.org) Node >= 16.116 LTS, npm >= 8.11.x - Install with Volta.sh
+-  [Node.js and npm](https://nodejs.org) Node >= 18.12 LTS, npm >= 8.19.x - Install with Volta.sh
 
 ## Express Router and Routes
 
@@ -19,7 +19,7 @@ Main base of the services used within the Make It Real platforms
 | --------------------| --------- | ------------------ | ------------------------------------ |
 | /api/healthcheck    | GET       | isAuthenticated    | Show a simple message                |
 | /api/users          | GET       | isAuthenticated    | Get list of users                    |
-| /api/users          | POST      | isAuthenticated    | Creates a new users                  |
+| /api/users          | POST      |                    | Creates a new users                  |
 | /api/users/:id      | GET       | isAuthenticated    | Get a single users                   |
 | /api/users/:id      | DELETE    | isAuthenticated    | Deletes a user                       |
 
