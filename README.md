@@ -32,8 +32,8 @@ The use of endpoints is very simple, previously you could see a table of endpoin
 Request Body:
 ```json
 {
-  "email": "kz@mz.com",
-  "password": "12345"
+  "email": "cristian.moreno@makeitreal.camp",
+  "password": "123456"
 }
 ```
 
@@ -42,10 +42,11 @@ Response:
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNyaXN0aWFuLm1vcmVub0BtYWtlaXRyZWFsLmNhbXAiLCJpYXQiOjE2NjEyMDgwODJ9.kPdMoVUEnyX36vi606Mc1C66yWLKKAB37GLbF0gzhBo",
   "profile": {
-    "_id": "62fd77a4d25acc4a4e5df3d1",
-    "firstName": "CRISTIAN",
-    "lastName": "MORENO",
-    "email": "cristian.moreno@makeitreal.camp"
+    "firstName": "cristian",
+    "lastName": "moreno",
+    "email": "cristian.moreno@makeitreal.camp",
+    "avatar": "https://image.com/264.jpg",
+    "role": "ADMIN"
   }
 }
 ```
@@ -54,11 +55,11 @@ Response:
 Request Body:
 ```json
 {
-  "name": "cristian moreno",
+  "firstName": "cristian",
+  "lastName": "moreno",
   "email": "cristian.moreno@makeitreal.camp",
   "password": "123456",
-  "profile": "62fd77a4d25acc4a4e5df3d1",
-  "profileRef": "Instructor"
+  "avatar": "https://image.com/264.jpg",
 }
 ```
 

@@ -19,9 +19,7 @@ export async function getUserByID(id: string) {
 }
 
 export async function getUser(filter: FilterQuery<UserDocument>) {
-  const user = await User.findOne(filter)
-    .populate({ path: 'profile', populate: { path: 'profile' } });
-
+  const user = await User.findOne(filter);
   return user;
 }
 
@@ -44,6 +42,6 @@ export async function deleteUser(filter: FilterQuery<UserDocument>) {
 }
 
 export async function getUserByEmail(email: string) {
-  const user = await User.findOne({ email }).populate('profile');
+  const user = await User.findOne({ email });
   return user;
 }

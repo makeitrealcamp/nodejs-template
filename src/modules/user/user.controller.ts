@@ -9,26 +9,26 @@ import {
   updateUser,
 } from './user.services';
 
-export async function listUserHandler(req: Request, res: Response) {
+export async function listUserHandler(req: Request, res: Response, next: NextFunction) {
   try {
     const users = await getUsers();
     return res.status(200).json(users);
   } catch (e: any) {
-    return res.status(409).send(e.message);
+    return next(e);
   }
 }
 
-export async function createUserHandler(req: Request, res: Response) {
+export async function createUserHandler(req: Request, res: Response, next: NextFunction) {
   const data = req.body;
   try {
     const user = await createUser(data);
     return res.status(201).json(user);
   } catch (e: any) {
-    return res.status(409).send(e.message);
+    return next(e);
   }
 }
 
-export async function getUserHandler(req: Request, res: Response) {
+export async function getUserHandler(req: Request, res: Response, next: NextFunction) {
   const { id } = req.params;
 
   try {
@@ -38,11 +38,11 @@ export async function getUserHandler(req: Request, res: Response) {
     }
     return res.status(200).json(user);
   } catch (e: any) {
-    return res.status(409).send(e.message);
+    return next(e);
   }
 }
 
-export async function updateUserHandler(req: Request, res: Response) {
+export async function updateUserHandler(req: Request, res: Response, next: NextFunction) {
   const { id } = req.params;
   const data = req.body;
 
@@ -54,11 +54,11 @@ export async function updateUserHandler(req: Request, res: Response) {
     const updatedUser = await updateUser({ _id: id }, data);
     return res.status(200).json(updatedUser);
   } catch (e: any) {
-    return res.status(409).send(e.message);
+    return next(e);
   }
 }
 
-export async function deleteUserHandler(req: Request, res: Response) {
+export async function deleteUserHandler(req: Request, res: Response, next: NextFunction) {
   const { id } = req.params;
 
   try {
@@ -69,7 +69,7 @@ export async function deleteUserHandler(req: Request, res: Response) {
     }
     return res.status(200).json(user);
   } catch (e: any) {
-    return res.status(409).send(e.message);
+    return next(e);
   }
 }
 

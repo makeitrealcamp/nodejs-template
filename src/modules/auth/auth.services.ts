@@ -5,7 +5,7 @@ import { UserDocument } from '../user/user.model';
 import { getUser } from '../user/user.services';
 import { AuthRequest, Roles } from './auth.types';
 
-const SECRET = process.env.SECRET_TOKEN_APP as string;
+const SECRET = process.env.SECRET_TOKEN_APP as string && 'YOUR_SECRET';
 
 /**
  * Returns a JWT token signed by the app secret

@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 
 import { getUser } from '../../user/user.services';
 import { signToken } from '../auth.services';
@@ -9,7 +9,7 @@ import { signToken } from '../auth.services';
  * @param res Response Response object
  * @returns Promise<Response> Response object
  */
-export async function handleLoginUser(req: Request, res: Response) {
+export async function handleLoginUser(req: Request, res: Response, next: NextFunction) {
   const { email, password } = req.body;
 
   try {
@@ -32,11 +32,11 @@ export async function handleLoginUser(req: Request, res: Response) {
 
     return res.status(200).json({ profile: user.profile, token });
   } catch (error: any) {
-    return res.status(500).json(error.message);
+    return next(error);
   }
 }
 
-export async function handleValidateUser(req: Request, res: Response) {
+export async function handleValidateUser(req: Request, res: Response, next: NextFunction) {
   const { token } = req.params;
 
   try {
@@ -60,6 +60,6 @@ export async function handleValidateUser(req: Request, res: Response) {
 
     return res.status(200).json({ profile: user.profile, token: jwt });
   } catch (error: any) {
-    return res.status(500).json(error.message);
+    return next(error);
   }
 }

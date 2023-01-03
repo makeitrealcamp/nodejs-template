@@ -6,6 +6,7 @@ import connectDB from './config/database';
 import swaggerDocs from './config/swagger';
 import routes from './routes';
 import { connectSocket } from './config/socket';
+import errorHandler from './middleware/errorHandler';
 
 // setup server
 const app = express();
@@ -26,5 +27,7 @@ connectSocket(server);
 routes(app);
 // Swagger
 swaggerDocs(app, port as number);
+// Error handler
+app.use(errorHandler);
 
 export default app;
