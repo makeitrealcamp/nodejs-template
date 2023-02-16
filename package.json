@@ -83,7 +83,7 @@
   },
   "homepage": "https://github.com/makeitrealcamp/nodejs-template#readme",
   "volta": {
-    "node": "18.12.1",
+    "node": "18.14.0",
     "npm": "9.5.0"
   }
 }
