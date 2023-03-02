@@ -12,7 +12,7 @@ export async function createUser(
 
 export async function getUserByID(id: string) {
   try {
-    return await User.findById(id).populate('profiles');
+    return await User.findById(id);
   } catch (error: any) {
     throw new Error(error);
   }

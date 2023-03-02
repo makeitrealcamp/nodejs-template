@@ -12,8 +12,8 @@ export interface UserDocument extends Document {
   avatar?: string;
   role: Role;
   isActive: boolean;
-  passwordResetToken?: string;
-  passwordResetExpires?: Date;
+  resetToken?: string;
+  resetExpires?: Date;
   payment?: paymentType;
   createdAt: Date;
   updatedAt: Date;
@@ -75,8 +75,8 @@ const UserSchema = new Schema({
     type: Boolean,
     default: false,
   },
-  passwordResetToken: String,
-  passwordResetExpires: Date,
+  resetToken: String,
+  resetExpires: Date,
   payment: Payment,
 }, {
   timestamps: true,
