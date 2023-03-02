@@ -1,11 +1,9 @@
-import { DocumentDefinition, FilterQuery } from 'mongoose';
+import { Model, FilterQuery } from 'mongoose';
 
 import User, { UserDocument } from './user.model';
 
 export async function createUser(
-  input: DocumentDefinition<
-    Omit<UserDocument, 'createdAt' | 'updatedAt'>
-  >,
+  input: Model<Omit<UserDocument, 'createdAt' | 'updatedAt'>>,
 ) {
   return User.create(input);
 }
@@ -30,7 +28,7 @@ export async function getUsers(filter?: FilterQuery<UserDocument>) {
 
 export async function updateUser(
   filter: FilterQuery<UserDocument>,
-  input: DocumentDefinition<UserDocument>,
+  input: Model<UserDocument>,
 ) {
   const user = await User.findOneAndUpdate(filter, input, { new: true });
   return user;

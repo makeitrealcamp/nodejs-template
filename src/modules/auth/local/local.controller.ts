@@ -46,13 +46,13 @@ export async function handleValidateUser(req: Request, res: Response, next: Next
       return res.status(404).json({ message: 'Invalid token' });
     }
 
-    if (Date.now() > Number(user.passwordResetExpires)) {
+    if (Date.now() > Number(user.resetExpires)) {
       return res.status(400).json({ message: 'Token expired' });
     }
 
     user.isActive = true;
-    user.passwordResetToken = undefined;
-    user.passwordResetExpires = undefined;
+    user.resetToken = undefined;
+    user.resetExpires = undefined;
 
     await user.save();
 
