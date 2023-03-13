@@ -27,7 +27,7 @@
     "morgan": "^1.10.0",
     "pino": "^8.0.0",
     "pino-http": "^8.0.0",
-    "pino-pretty": "^9.0.0",
+    "pino-pretty": "^10.0.0",
     "request-promise": "^4.2.6",
     "socket.io": "^4.5.1",
     "swagger-jsdoc": "^6.2.1",
